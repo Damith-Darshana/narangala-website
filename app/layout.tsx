@@ -40,6 +40,14 @@ export default async function RootLayout({
               <Link href="/blog">Blog</Link>
               {session?.user ? (
                 <>
+                  {(session.user as any).role === "ADMIN" && (
+                    <Link
+                      href="/admin"
+                      className="font-medium text-purple-700"
+                    >
+                      Admin
+                    </Link>
+                  )}
                   <Link href="/dashboard" className="font-medium">
                     Dashboard
                   </Link>

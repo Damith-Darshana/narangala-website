@@ -12,7 +12,7 @@ import {
   BOOKING_STATUS_LABELS,
   BOOKING_STATUS_STYLES,
   formatLKR,
-} from "@/lib/services-helpers";
+} from "@/lib/utils";
 import { updateBookingStatus } from "@/actions/booking-actions";
 
 export default async function ProviderBookingsPage() {

@@ -4,7 +4,7 @@ import { asc, eq } from "drizzle-orm";
 import {
   CONTACT_TYPE_ICONS,
   CONTACT_TYPE_LABELS,
-} from "@/lib/services-helpers";
+} from "@/lib/utils";
 
 export const revalidate = 3600;
 

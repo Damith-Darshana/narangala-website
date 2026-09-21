@@ -2,7 +2,8 @@ import Link from "next/link";
 import { db } from "@/lib/db";
 import { serviceProviders, serviceCategories } from "@/lib/schema";
 import { and, asc, desc, eq, ilike, or } from "drizzle-orm";
-import { formatLKR, getActiveCategories } from "@/lib/services-helpers";
+import { getActiveCategories } from "@/lib/services-helpers";
+import {formatLKR} from "@/lib/utils";
 
 export const revalidate = 60;
 

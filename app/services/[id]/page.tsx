@@ -13,7 +13,7 @@ import {
   users,
 } from "@/lib/schema";
 import { and, asc, desc, eq } from "drizzle-orm";
-import { formatLKR } from "@/lib/services-helpers";
+import { formatLKR } from "@/lib/utils";
 import { r2Url } from "@/lib/r2-client";
 
 export const revalidate = 60;

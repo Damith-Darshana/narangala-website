@@ -9,7 +9,7 @@ import {
 } from "@/lib/schema";
 import { and, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
-import { generateBookingId } from "@/lib/services-helpers";
+import { generateBookingId } from "@/lib/utils";
 import { z } from "zod";
 
 const createBookingSchema = z.object({

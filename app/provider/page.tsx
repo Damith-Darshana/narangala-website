@@ -9,7 +9,7 @@ import {
   serviceReviews,
 } from "@/lib/schema";
 import { and, count, desc, eq, sql } from "drizzle-orm";
-import { formatLKR } from "@/lib/services-helpers";
+import { formatLKR } from "@/lib/utils";
 
 export default async function ProviderDashboardPage() {
   const session = await auth();
