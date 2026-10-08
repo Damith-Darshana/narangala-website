@@ -503,6 +503,7 @@ export type TrailInfo = typeof trailInfo.$inferSelect;
 export type TrailWaypoint = typeof trailWaypoints.$inferSelect;
 export type WeatherInfo = typeof weatherInfo.$inferSelect;
 export type MountainGallery = typeof mountainGallery.$inferSelect;
+export type FAQ =typeof faqs.$inferSelect;
 
 export type ServiceCategory = typeof serviceCategories.$inferSelect;
 export type ServiceProvider = typeof serviceProviders.$inferSelect;
