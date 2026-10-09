@@ -1,17 +1,40 @@
 import Link from "next/link";
+import { HeroVideo } from "@/components/hero-video";
 
 export default function Home() {
   return (
-    <div className="space-y-8">
-      <section className="space-y-4">
-        <h1 className="text-4xl font-bold">Explore Narangala Mountain</h1>
-        <p className="text-lg text-gray-700">
-          The Golden Mountain of Uva Province. Hiking guides, weather, gallery,
-          and local services — all in one place.
-        </p>
-      </section>
+    <div className="space-y-8 ">
+      <HeroVideo
+        posterKey="mountain/hero-poster.webp"
+        videoKey="mountain/hero.mp4"
+        className="relative w-full h-[50vh] md:h-[70vh] overflow-hidden rounded-lg"
+      >
+        <div className="max-w-3xl text-white space-y-4">
+          <h1 className="text-4xl md:text-6xl font-bold drop-shadow-lg">
+            Explore Narangala
+          </h1>
+          <p className="text-lg md:text-2xl text-white/90 drop-shadow-md">
+            The Golden Mountain of Uva Province
+          </p>
+          <div className="flex gap-3 justify-center pt-4 flex-wrap">
+            <Link
+              href="/trail"
+              className="bg-white text-black px-6 py-3 rounded font-medium hover:bg-gray-100"
+            >
+              Trail Guide
+            </Link>
+            <Link
+              href="/services"
+              className="bg-black/60 backdrop-blur text-white border border-white/30 px-6 py-3 rounded font-medium hover:bg-black/80"
+            >
+              Local Services
+            </Link>
+          </div>
+        </div>
+      </HeroVideo>
 
-      <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {/* Card grid below the hero */}
+      <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 px-6 md:px-0">
         <Card
           href="/about"
           title="About the Mountain"

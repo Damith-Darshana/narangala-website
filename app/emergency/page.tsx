@@ -5,6 +5,13 @@ import {
   CONTACT_TYPE_ICONS,
   CONTACT_TYPE_LABELS,
 } from "@/lib/utils";
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Emergency Contacts",
+  description:
+    "Emergency phone numbers for Narangala Mountain: police, ambulance, hospital, and mountain rescue.",
+};
+
 
 export const revalidate = 3600;
 

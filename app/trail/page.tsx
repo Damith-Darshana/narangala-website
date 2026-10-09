@@ -2,6 +2,14 @@ import { db } from "@/lib/db";
 import { trailInfo, trailWaypoints } from "@/lib/schema";
 import { asc, eq } from "drizzle-orm";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Trail Guide",
+  description:
+    "Complete trail guide for hiking Narangala Mountain: 3km route, 10 waypoints, elevation profile, safety tips, and best times to hike.",
+};
+
 
 export const revalidate = 300;
 

@@ -15,6 +15,36 @@ import {
 import { and, asc, desc, eq } from "drizzle-orm";
 import { formatLKR } from "@/lib/utils";
 import { r2Url } from "@/lib/r2-client";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const [row] = await db
+    .select({
+      businessName: serviceProviders.businessName,
+      description: serviceProviders.description,
+      categoryName: serviceCategories.name,
+    })
+    .from(serviceProviders)
+    .innerJoin(
+      serviceCategories,
+      eq(serviceCategories.id, serviceProviders.categoryId)
+    )
+    .where(eq(serviceProviders.id, id))
+    .limit(1);
+
+  if (!row) return { title: "Provider not found" };
+
+  return {
+    title: `${row.businessName} — ${row.categoryName}`,
+    description: row.description.slice(0, 160),
+  };
+}
+
 
 export const revalidate = 60;
 

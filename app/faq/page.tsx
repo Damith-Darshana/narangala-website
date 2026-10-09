@@ -1,6 +1,14 @@
 import { db } from "@/lib/db";
 import { faqs } from "@/lib/schema";
 import { asc, eq } from "drizzle-orm";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Frequently Asked Questions",
+  description:
+    "Answers to common questions about hiking Narangala Mountain: difficulty, duration, guides, permits, and safety.",
+};
+
 
 export const revalidate = 3600;
 

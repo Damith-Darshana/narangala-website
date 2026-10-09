@@ -1,6 +1,14 @@
 import { db } from "@/lib/db";
 import { weatherInfo } from "@/lib/schema";
 import { desc, gte } from "drizzle-orm";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Weather & Forecast",
+  description:
+    "Current weather conditions and 7-day forecast for Narangala Mountain, Badulla, Sri Lanka.",
+};
+
 
 export const revalidate = 600;
 

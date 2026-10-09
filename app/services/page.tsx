@@ -4,6 +4,14 @@ import { serviceProviders, serviceCategories } from "@/lib/schema";
 import { and, asc, desc, eq, ilike, or } from "drizzle-orm";
 import { getActiveCategories } from "@/lib/services-helpers";
 import {formatLKR} from "@/lib/utils";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Local Services",
+  description:
+    "Tuk-tuks, guides, camping gear, food, and accommodation near the Narangala trailhead in Keenakele, Badulla.",
+};
+
 
 export const revalidate = 60;
 

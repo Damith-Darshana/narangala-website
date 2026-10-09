@@ -2,6 +2,14 @@ import { db } from "@/lib/db";
 import { galleryImages, users } from "@/lib/schema";
 import { desc, eq, and } from "drizzle-orm";
 import { r2Url } from "@/lib/r2-client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Photo Gallery",
+  description:
+    "Photos shared by hikers who climbed Narangala Mountain. Sunrise views, golden grasslands, and summit panoramas.",
+};
+
 
 export const revalidate = 60;
 

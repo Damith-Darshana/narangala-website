@@ -2,6 +2,15 @@ import { db } from "@/lib/db";
 import { mountainInfo } from "@/lib/schema";
 import { eq } from "drizzle-orm";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About the Mountain",
+  description:
+    "History, legends, and geography of Narangala Mountain — the Golden Mountain of Uva Province, Sri Lanka.",
+};
+
+
 
 export const revalidate = 3600;
 
