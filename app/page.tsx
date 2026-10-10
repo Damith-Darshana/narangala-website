@@ -4,10 +4,11 @@ import { HeroVideo } from "@/components/hero-video";
 export default function Home() {
   return (
     <div className="space-y-8 ">
+      <div className="relative w-full h-[50vh] md:h-[70vh] overflow-hidden rounded-lg">
       <HeroVideo
         posterKey="mountain/hero-poster.webp"
         videoKey="mountain/hero.mp4"
-        className="relative w-full h-[50vh] md:h-[70vh] overflow-hidden rounded-lg"
+        
       >
         <div className="max-w-3xl text-white space-y-4">
           <h1 className="text-4xl md:text-6xl font-bold drop-shadow-lg">
@@ -32,6 +33,7 @@ export default function Home() {
           </div>
         </div>
       </HeroVideo>
+      </div>
 
       {/* Card grid below the hero */}
       <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 px-6 md:px-0">

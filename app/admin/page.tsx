@@ -26,7 +26,7 @@ export default async function AdminDashboard() {
     [completedBookings],
     [totalContacts],
     [totalFaqs],
-    [recentWeather],
+    [recentWeather], // Destructures the first element directly as an object
   ] = await Promise.all([
     db.select({ c: count() }).from(users),
     db.select({ c: count() }).from(users).where(eq(users.role, "PROVIDER")),
@@ -123,14 +123,14 @@ export default async function AdminDashboard() {
         <Stat label="Pending Reviews" value={pendingReviews.c} tone="yellow" />
       </section>
 
-      {recentWeather[0] && (
+      {recentWeather && (
         <section className="border rounded-lg p-4">
           <h2 className="font-semibold mb-2">Latest Weather Entry</h2>
           <div className="text-sm text-gray-700">
-            <div className="font-medium">{recentWeather[0].date}</div>
+            <div className="font-medium">{recentWeather.date}</div>
             <div>
-              {recentWeather[0].condition} · {recentWeather[0].temperatureCelsius}°C ·{" "}
-              {recentWeather[0].humidityPercent}% humidity
+              {recentWeather.condition} · {recentWeather.temperatureCelsius}°C ·{" "}
+              {recentWeather.humidityPercent}% humidity
             </div>
           </div>
           <Link
