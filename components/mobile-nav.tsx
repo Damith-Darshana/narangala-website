@@ -18,15 +18,15 @@ export function MobileNav({
     <div className="md:hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="p-2 -mr-2"
+        className="-mr-2 rounded-full border border-border bg-card p-2 text-foreground shadow-sm"
         aria-label="Toggle menu"
       >
         {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
       </button>
 
       {open && (
-        <div className="fixed inset-0 top-[57px] bg-white z-50 overflow-y-auto">
-          <nav className="p-4 space-y-1">
+        <div className="fixed inset-0 top-[73px] z-50 overflow-y-auto bg-background/95 backdrop-blur-xl">
+          <nav className="flex flex-col gap-1 p-6">
             {links.map((link) => (
               <Link
                 key={link.href}

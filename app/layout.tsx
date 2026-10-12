@@ -76,16 +76,20 @@ export default async function RootLayout({
             strategy="afterInteractive"
           />
         )}
-        <nav className="border-b bg-white sticky top-0 z-40">
-          <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
-            <Link href="/" className="font-bold text-lg">
-              Narangala
+        <nav className="sticky top-0 z-40 border-b border-foreground/10 bg-background/90 backdrop-blur-xl">
+          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
+            <Link href="/" className="group flex items-center gap-3">
+              <span className="grid size-9 place-items-center rounded-full bg-primary text-sm font-black text-primary-foreground shadow-sm">N</span>
+              <span>
+                <span className="block text-sm font-bold tracking-tight text-foreground">Narangala</span>
+                <span className="block text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">Golden Mountain</span>
+              </span>
             </Link>
 
             {/* Desktop nav */}
-            <div className="hidden md:flex gap-4 items-center text-sm">
+            <div className="hidden items-center gap-1 text-sm md:flex">
               {NAV_LINKS.map((link) => (
-                <Link key={link.href} href={link.href}>
+                <Link key={link.href} href={link.href} className="rounded-full px-3 py-2 text-muted-foreground hover:bg-muted hover:text-foreground">
                   {link.label}
                 </Link>
               ))}
@@ -134,7 +138,7 @@ export default async function RootLayout({
             />
           </div>
         </nav>
-        <main>{children}</main>
+        <main className="site-main">{children}</main>
       </body>
     </html>
   );

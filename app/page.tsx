@@ -3,30 +3,31 @@ import { HeroVideo } from "@/components/hero-video";
 
 export default function Home() {
   return (
-    <div className="space-y-8 ">
-      <div className="relative w-full h-[50vh] md:h-[70vh] overflow-hidden rounded-lg">
+    <div className="home-shell space-y-10 pb-16">
+      <div className="relative w-full overflow-hidden rounded-b-[2rem] shadow-2xl shadow-primary/10 md:rounded-[2rem] md:mt-6">
       <HeroVideo
         posterKey="mountain/hero-poster.webp"
         videoKey="mountain/hero.mp4"
         
       >
-        <div className="max-w-3xl text-white space-y-4">
-          <h1 className="text-4xl md:text-6xl font-bold drop-shadow-lg">
+        <div className="max-w-3xl space-y-5 px-2 text-white">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/70">Badulla · Uva Province · Sri Lanka</p>
+          <h1 className="text-5xl font-black tracking-[-0.05em] drop-shadow-lg md:text-8xl">
             Explore Narangala
           </h1>
           <p className="text-lg md:text-2xl text-white/90 drop-shadow-md">
-            The Golden Mountain of Uva Province
+            A quiet summit with a golden story
           </p>
           <div className="flex gap-3 justify-center pt-4 flex-wrap">
             <Link
               href="/trail"
-              className="bg-white text-black px-6 py-3 rounded font-medium hover:bg-gray-100"
+              className="rounded-full bg-white px-6 py-3 font-semibold text-primary shadow-lg hover:-translate-y-0.5 hover:bg-white/90"
             >
               Trail Guide
             </Link>
             <Link
               href="/services"
-              className="bg-black/60 backdrop-blur text-white border border-white/30 px-6 py-3 rounded font-medium hover:bg-black/80"
+              className="rounded-full border border-white/30 bg-black/30 px-6 py-3 font-semibold text-white backdrop-blur-md hover:-translate-y-0.5 hover:bg-black/60"
             >
               Local Services
             </Link>
@@ -36,7 +37,7 @@ export default function Home() {
       </div>
 
       {/* Card grid below the hero */}
-      <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 px-6 md:px-0">
+      <section className="grid gap-4 px-4 md:grid-cols-2 md:px-0 lg:grid-cols-3">
         <Card
           href="/about"
           title="About the Mountain"
@@ -99,10 +100,11 @@ function Card({
   return (
     <Link
       href={href}
-      className="border rounded-lg p-5 hover:bg-gray-50 transition"
+      className="group rounded-2xl border bg-card p-6 shadow-sm transition hover:-translate-y-1 hover:border-accent/50 hover:bg-card hover:shadow-xl hover:shadow-primary/5"
     >
-      <h2 className="font-semibold text-lg">{title}</h2>
-      <p className="text-sm text-gray-600 mt-1">{desc}</p>
+      <div className="mb-8 flex size-10 items-center justify-center rounded-full bg-muted text-primary transition group-hover:bg-accent group-hover:text-accent-foreground">↗</div>
+      <h2 className="text-lg font-bold tracking-tight">{title}</h2>
+      <p className="mt-2 text-sm leading-6 text-muted-foreground">{desc}</p>
     </Link>
   );
 }
